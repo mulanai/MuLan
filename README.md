@@ -70,3 +70,9 @@ If you find this repo helpful, please considering citing us.
 
 ![Visitors](https://api.visitorbadge.io/api/visitors?path=https%3A%2F%2Fgithub.com%2Fmulanai%2FMuLan&countColor=%23263759&style=flat)
 
+
+## Acknowledgement
+
+Our work is made possible by the open-source of these great works.
+
+[Stable Diffusion](https://github.com/Stability-AI/stablediffusion) · [Pixart-Alpha](https://github.com/PixArt-alpha/PixArt-alpha) · [InternVL](https://github.com/OpenGVLab/InternVL) 
