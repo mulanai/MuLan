@@ -26,7 +26,7 @@ image = pipe('一只蓝色的🐶 in the 바다').images[0]
 
 ## What is it ?
 
-> We present **MuLan**, a versatile framework to equip any diffusion model with multilingual generation abilities natively by *up to 110+ languages* around the world. With properly trained text encoder from noisy data (such as [InternVL](https://github.com/OpenGVLab/InternVL)), we demonstrate that MuLan could be *trained on English only data* and support other languages *zero-shot*. Additionally, we introduce **Language Adapter**. A language adapter with *less than 20M parameters*, trained against a frozen denoiser and a text encoder, can be *readily combined with any homologous community models/tools*, such as LoRA, LCM, ControlNet, and IP-Adapter, *without any finetuning*.
+> We present **MuLan**, a versatile framework to equip any diffusion model with multilingual generation abilities natively by *up to 110+ languages* around the world. With properly trained text encoder from noisy data, we demonstrate that MuLan could be *trained on English only data* and support other languages *zero-shot*. Additionally, we introduce **Language Adapter**. A language adapter with *less than 20M parameters*, trained against a frozen denoiser and a text encoder, can be *readily combined with any homologous community models/tools*, such as LoRA, LCM, ControlNet, and IP-Adapter, *without any finetuning*.
 
 
 ## News
