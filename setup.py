@@ -8,7 +8,6 @@ deps = [
     'numpy',
     'gradio',
     'timm',
-    
 ]
 
 setup(

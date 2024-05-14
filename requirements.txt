@@ -1,0 +1,8 @@
+fire
+diffusers
+huggingface_hub
+transformers
+numpy
+gradio
+timm
+torch
