@@ -29,6 +29,8 @@ image = pipe('一只蓝色的🐶 in the 바다').images[0]
 ## What is it ?
 
 > We present **MuLan**, a versatile framework to equip any diffusion model with multilingual generation abilities natively by *up to 110+ languages* around the world. With properly trained text encoder from noisy data, we demonstrate that MuLan could be *trained on English only data* and support other languages *zero-shot*. Additionally, we introduce **Language Adapter**. A language adapter with *less than 20M parameters*, trained against a frozen denoiser and a text encoder, can be *readily combined with any homologous community models/tools*, such as LoRA, LCM, ControlNet, and IP-Adapter, *without any finetuning*.
+> 
+> MuLan(木兰）可以使任何扩散模型原生地支持多达110多种语言的图像/视频/3D生成能力。通过使用带噪声的海量数据适当训练的文本编码器，我们展示了MuLan可以仅在英语数据上进行训练并且支持其他语言的零样本生成。此外，我们引入了语言适配器。一个具有不到20M参数的简单映射网络，在一个冻结的去噪器和文本编码器上训练，即可无需任何微调地与任何同类社区模型/工具（如LoRA、LCM、ControlNet和IP-Adapter）无缝结合。
 
 
 ## News
