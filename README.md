@@ -4,9 +4,9 @@
 <a href=# target="_blank"><img src=https://img.shields.io/badge/Report-b5212f.svg?logo=arxiv height=22px></a>
 <a href=https://huggingface.co/mulanai target="_blank"><img src=https://img.shields.io/badge/%F0%9F%A4%97%20Demo-276cb4.svg height=22px></a>
 <!-- <a href=# target="_blank"><img src= https://img.shields.io/badge/Colab-8f2628.svg?logo=googlecolab height=22px></a> -->
-<a href=[https://huggingface.co/mulanai](https://huggingface.co/mulanai/mulan-lang-adapter) target="_blank"><img src=https://img.shields.io/badge/%F0%9F%A4%97%20Models-d96902.svg height=22px></a>
+<a href=https://huggingface.co/mulanai/mulan-lang-adapter target="_blank"><img src=https://img.shields.io/badge/%F0%9F%A4%97%20Models-d96902.svg height=22px></a>
 <!-- <a href=https://github.com/mulanai/MuLan target="_blank"><img src= https://img.shields.io/badge/Page-bb8a2e.svg?logo=github height=22px></a> -->
-<a href="[https://pypi.org/project/mulankit/](https://pypi.org/project/mulankit/)"><img alt="PyPI - Downloads" src="https://img.shields.io/pypi/v/mulankit?logo=pypi"  height=22px></a>
+<a href="https://pypi.org/project/mulankit"><img alt="PyPI - Downloads" src="https://img.shields.io/pypi/v/mulankit?logo=pypi"  height=22px></a>
 </div>
 <br>
 
