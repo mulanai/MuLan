@@ -142,6 +142,43 @@ def load_delta(pipe, delta_path):
     return pipe
 
 
+def load_configs(pipe_path):
+    num_inference_steps = 30
+    width = 512
+    height = 512
+    schedule = 'Default'
+    cfg = 5.0
+        
+    if 'stable-diffusion-2-1' in pipe_path:
+        width = 768
+        height = 768
+    elif 'xl' in pipe_path:
+        width = 1024
+        height = 1024
+    elif 'PixArt' in pipe_path:
+        cfg = 3.5
+        if '1024' in pipe_path:
+            width = 1024
+            height = 1024
+        
+    if 'LCM' in pipe_path:
+        num_inference_steps = 5
+        schedule = 'LCM-Solver'
+        
+    if 'lightning' in pipe_path:
+        num_inference_steps = 10
+        schedule = 'SDXL-Lightning'
+        cfg = 0
+        
+    # [inference_steps, width, height, schedule, guidance_scale]
+    return (
+        gr.update(value=num_inference_steps), 
+        gr.update(value=width),
+        gr.update(value=height),
+        gr.update(value=schedule),
+        gr.update(value=cfg)
+    )
+
 def load_model(models, model_category, pipe_path, adapter_path, vae_path, lora_path, delta_path):
     gr.Info(f'Loading model {pipe_path} \n adapter {adapter_path}')
     print(models.keys(), flush=True)
@@ -204,7 +241,11 @@ def load_model(models, model_category, pipe_path, adapter_path, vae_path, lora_p
 
     gr.Info('Model loaded')
     print('loaded', flush=True)
-    return models, gr.update(interactive=True)
+    configs = load_configs(pipe_path)
+    return (
+        models, 
+        gr.update(interactive=True), 
+    ) + configs
 
 
 def save_image(img):
@@ -362,7 +403,8 @@ def main(
 
     MODEL_CHOICES, ADAPTER_CHOICES, VAE_CHOICES, LORA_CHOICES, DELTA_CHOICES = load_model_list(DEFAULT_CATEGORY)
 
-    state_, _ = load_model({'history': []}, DEFAULT_CATEGORY, MODEL_CHOICES[0], ADAPTER_CHOICES[0], VAE_CHOICES[0], LORA_CHOICES[0], DELTA_CHOICES[0])
+    output = load_model({'history': []}, DEFAULT_CATEGORY, MODEL_CHOICES[0], ADAPTER_CHOICES[0], VAE_CHOICES[0], LORA_CHOICES[0], DELTA_CHOICES[0])
+    state_ = output[0]
 
     with gr.Blocks(css=CSS_PATH) as demo:
         state = gr.State(state_)
@@ -503,6 +545,8 @@ def main(
                         force_sdxl_zero_empty_prompt = gr.Checkbox(label="force_sdxl_zero_empty_prompt", value=FORCE_SDXL_ZERO_EMPTY_PROMPT)
                         force_sdxl_zero_negative_pool_prompt = gr.Checkbox(label="force_sdxl_zero_negative_pool_prompt", value=FORCE_SDXL_ZERO_NEGATIVE_POOL_PROMPT)
 
+        configs = [inference_steps, width, height, schedule, guidance_scale]
+        
         gr.Examples(
             examples=examples,
             inputs=prompt,
@@ -534,7 +578,7 @@ def main(
         ).then(
             fn=load_model_auto_clean,
             inputs=[state, model_category, selected_model, selected_adapter, selected_vae, selected_lora, selected_delta],
-            outputs=[state, run_button],
+            outputs=[state, run_button]+configs,
         )
 
         reload_button.click(reload_model_list, inputs=[model_category], outputs=[selected_model, selected_adapter, selected_vae, selected_lora, selected_delta])
