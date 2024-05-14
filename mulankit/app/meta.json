@@ -1,0 +1,98 @@
+{
+    "sd15": {
+        "adapter": [
+            "None",
+            "mulanai/mulan-lang-adapter::sd15_aesthetic.pth",
+            "mulanai/mulan-lang-adapter::sd15_base.pth"
+        ],
+        "model": [
+            "SimianLuo/LCM_Dreamshaper_v7",
+            "Lykon/dreamshaper-8",
+            "SG161222/Realistic_Vision_V6.0_B1_noVAE",
+            "runwayml/stable-diffusion-v1-5"
+        ],
+        "vae": [
+            "None",
+            "stabilityai/sd-vae-ft-mse"
+        ],
+        "lora": [
+            "None"
+        ]
+    },
+    "sd21": {
+        "adapter": [
+            "None",
+            "mulanai/mulan-lang-adapter::sd21_aesthetic.pth",
+            "mulanai/mulan-lang-adapter::sd21_base.pth"
+        ],
+        "model": [
+            "stabilityai/stable-diffusion-2-1",
+            "stabilityai/sd-turbo"
+        ],
+        "vae": [
+            "None"
+        ],
+        "lora": [
+            "None"
+        ]
+    },
+    "sdxl": {
+        "adapter": [
+            "None",
+            "mulanai/mulan-lang-adapter::sdxl_aesthetic.pth"
+        ],
+        "model": [
+            "Lykon/dreamshaper-xl-lightning",
+            "Lykon/dreamshaper-xl-1-0",
+            "Lykon/dreamshaper-xl-v2-turbo",
+            "stabilityai/stable-diffusion-xl-base-1.0"
+        ],
+        "vae": [
+            "None"
+        ],
+        "lora": [
+            "None"
+        ]
+    },
+    "pixart": {
+        "adapter": [
+            "None",
+            "mulanai/mulan-lang-adapter::pixart.pth"
+        ],
+        "model": [
+            "PixArt-alpha/PixArt-XL-2-512x512",
+            "PixArt-alpha/PixArt-XL-2-1024-MS",
+            "PixArt-alpha/PixArt-LCM-XL-2-1024-MS"
+        ],
+        "vae": [
+            "None"
+        ],
+        "lora": [
+            "None"
+        ],
+        "delta": [
+            "None"
+        ]
+    },
+    "other": {
+        "adapter": [
+            "None"
+        ],
+        "model": [
+            "kandinsky-community/kandinsky-2-1",
+            "kandinsky-community/kandinsky-2-2-decoder",
+            "fp16:kandinsky-community/kandinsky-3",
+            "BAAI/AltDiffusion-m18",
+            "IDEA-CCNL/Taiyi-Stable-Diffusion-1B-Chinese-v0.1",
+            "IDEA-CCNL/Taiyi-Stable-Diffusion-XL-3.5B",
+            "openbmb/VisCPM-Paint",
+            "stabilityai/japanese-stable-diffusion-xl"
+        ],
+        "vae": [
+            "None"
+        ],
+        "lora": [
+            "None"
+        ]
+    }
+}

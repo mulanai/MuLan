@@ -14,7 +14,7 @@ from diffusers import StableDiffusionPipeline
 + import mulankit
 
 pipe = StableDiffusionPipeline.from_pretrained('Lykon/dreamshaper-8')
-+ pipe = mulankit.transform(pipe)
++ pipe = mulankit.transform(pipe, 'mulanai/mulan-lang-adapter::sd15_aesthetic.pth')
 image = pipe('一只蓝色的🐶 in the 바다').images[0]
 ```
 
@@ -31,8 +31,8 @@ image = pipe('一只蓝色的🐶 in the 바다').images[0]
 
 ## News
 
-- [ ] release models
 - [ ] release technical report
+- [x] 2024-5-14: release code and models
 
 
 ## How to use 
