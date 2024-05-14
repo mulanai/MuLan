@@ -8,3 +8,4 @@ timm
 torch
 einops
 peft
+sentencepiece

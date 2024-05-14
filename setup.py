@@ -8,6 +8,9 @@ deps = [
     'numpy',
     'gradio',
     'timm',
+    'sentencepiece',
+    'peft',
+    'einops',
 ]
 
 setup(
