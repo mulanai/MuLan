@@ -157,6 +157,7 @@ def load_configs(pipe_path):
         height = 1024
     elif 'PixArt' in pipe_path:
         cfg = 3.5
+        num_inference_steps = 20
         if '1024' in pipe_path:
             width = 1024
             height = 1024
@@ -169,7 +170,11 @@ def load_configs(pipe_path):
         num_inference_steps = 10
         schedule = 'SDXL-Lightning'
         cfg = 0
-        
+    
+    if 'turbo' in pipe_path:
+        num_inference_steps = 10
+        cfg = 0
+    
     # [inference_steps, width, height, schedule, guidance_scale]
     return (
         gr.update(value=num_inference_steps), 
