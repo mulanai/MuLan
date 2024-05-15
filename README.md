@@ -41,11 +41,14 @@ https://github.com/mulanai/MuLan/assets/26198430/611ea7ae-b1a8-4c14-8751-34b4217
 
 ## News
 
-- [ ] release technical report
-- [x] 2024-5-14: release code and models
+- [ ] optimize memory usage.
+- [ ] release technical report.
+- [x] 2024-5-14: release code and models.
 
 
 ## How to use 
+
+We have hosted a gradio demo [here](http://101.132.98.120:10025/).
 
 MuLan supports 
 - Base models: Stable Diffusion 1.5, 2.1, XL, Pixart-Alpha/Sigma.
