@@ -33,7 +33,9 @@ image = pipe('一只蓝色的🐶 in the 바다').images[0]
 > MuLan(木兰）可以使任何扩散模型原生地支持多达110多种语言的图像/视频/3D生成能力。通过使用带噪声的海量数据适当训练的文本编码器，我们展示了MuLan可以仅在英语数据上进行训练并且支持其他语言的零样本生成。此外，我们引入了语言适配器。一个具有不到20M参数的简单映射网络，在一个冻结的去噪器和文本编码器上训练，即可无需任何微调地与任何同类社区模型/工具（如LoRA、LCM、ControlNet和IP-Adapter）无缝结合。
 
 
-https://github.com/mulanai/MuLan/assets/26198430/5dde3a1d-d929-42b1-bb3e-ce9cad65a3ab
+
+https://github.com/mulanai/MuLan/assets/26198430/611ea7ae-b1a8-4c14-8751-34b42175dcca
+
 
 
 
