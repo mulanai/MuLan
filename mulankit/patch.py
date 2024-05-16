@@ -18,7 +18,7 @@ FORCE_SDXL_ZERO_POOL_PROMPT = True
 FORCE_SDXL_ZERO_EMPTY_PROMPT = True
 FORCE_SDXL_ZERO_NEGATIVE_POOL_PROMPT = True
  
- 
+
 def setup(
     max_token_length=MAX_TOKEN_LENGTH, 
     force_sdxl_zero_pool_prompt=FORCE_SDXL_ZERO_POOL_PROMPT, 
@@ -468,7 +468,6 @@ def encode_prompt_sdxl(
         prompt_embeds, pooled_prompt_embeds = self.unet.adapter(prompt_embeds, pooled_prompt_embeds)
         
         if FORCE_SDXL_ZERO_POOL_PROMPT:
-            print('FORCE_SDXL_ZERO_POOL_PROMPT', flush=True)
             pooled_prompt_embeds = torch.zeros_like(pooled_prompt_embeds)
 
     if self.text_encoder is not None:
@@ -490,7 +489,6 @@ def encode_prompt_sdxl(
         empty_prompt = 'summarize:' + empty_prompt
 
     if negative_prompt == empty_prompt and FORCE_SDXL_ZERO_EMPTY_PROMPT:
-        print('FORCE_SDXL_ZERO_EMPTY_PROMPT', flush=True)
         negative_prompt_embeds = torch.zeros_like(prompt_embeds)
         negative_pooled_prompt_embeds = torch.zeros_like(pooled_prompt_embeds)
     else:
@@ -526,7 +524,6 @@ def encode_prompt_sdxl(
             negative_prompt_embeds, negative_pooled_prompt_embeds = self.unet.adapter(negative_prompt_embeds, negative_pooled_prompt_embeds)
             
             if FORCE_SDXL_ZERO_NEGATIVE_POOL_PROMPT:
-                print('FORCE_SDXL_ZERO_NEGATIVE_POOL_PROMPT', flush=True)
                 negative_pooled_prompt_embeds = torch.zeros_like(negative_pooled_prompt_embeds)
             
     if do_classifier_free_guidance:
