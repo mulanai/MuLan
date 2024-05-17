@@ -58,7 +58,6 @@ def transform(
             def func(*args, **kwargs): return encode_prompt_sdxl(pipe, *args, **kwargs)
             unet = UNetSDXLModel(pipe.unet, adapter, replace=replace)
             if adapter.add_embedding is not None:
-                print('load add embedding')
                 unet.add_embedding = adapter.add_embedding
             pipe.unet = unet.to(device=pipe.unet.device, dtype=pipe.unet.dtype)
     elif pipe_type == 'pixart':
@@ -66,8 +65,6 @@ def transform(
         if adapter is not None:
             pipe.transformer.caption_projection = adapter.to(device=pipe.text_encoder.device, dtype=pipe.text_encoder.dtype)
     pipe.encode_prompt = func
-
-    print('pipe_type', pipe_type)
     return pipe
 
 
@@ -90,7 +87,6 @@ def load_adapter(path, device=None, type=None):
 
     if type is None:
         type = infer_pipe_type(None, path)
-    print(type, flush=True)
     
     if not os.path.exists(path):
         try:
