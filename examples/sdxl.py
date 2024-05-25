@@ -15,8 +15,7 @@ pipe = StableDiffusionXLPipeline.from_pretrained(
 mulankit.setup(force_sdxl_zero_empty_prompt=False, force_sdxl_zero_pool_prompt=False)
 pipe = mulankit.transform(
     pipe,
-    adapter_path='../ckpts/adapter/sdxl/sdxl_internvl_unet_transformer_dual_xl_1024_ema_random_drop_9000.pth',
-    # adapter_path='../ckpts/adapter/sdxl/sdxl_internvl_unet_transformer_dual_xl_512_ema_94000.pth',
+    adapter_path='mulanai/mulan-lang-adapter::sdxl_aesthetic.pth',
 )
 pipe = pipe.to('cuda', dtype=torch.float16)
 
