@@ -6,6 +6,13 @@ import mulankit
 
 pipe = PixArtAlphaPipeline.from_pretrained('PixArt-alpha/PixArt-XL-2-1024-MS')
 # pipe = PixArtAlphaPipeline.from_pretrained('PixArt-alpha/PixArt-XL-2-512x512')
+
+# TODO: we only need to load internvl text encoder
+pipe = mulankit.transform(
+    pipe,
+    adapter_path='mulanai/mulan-lang-adapter::pixart.pth',
+)
+
 pipe.transformer = Transformer2DModel.from_pretrained('mulanai/mulan-pixart', subfolder='pixart-alpha-1024-ms')
 pipe = pipe.to('cuda', dtype=torch.float16)
 
@@ -20,6 +27,7 @@ images = pipe(
     ],
     generator=torch.manual_seed(0),
 ).images
+
 make_image_grid(images, 2, 3).save(
     # 'pixart_512.jpg'
     'pixart_1024.jpg'
