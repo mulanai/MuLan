@@ -1,7 +1,7 @@
 #  <div align="center"> 🌻 MuLan <div>
 
 <div align="center">
-<a href=[#](https://arxiv.org/abs/2412.01271) target="_blank"><img src=https://img.shields.io/badge/Report-b5212f.svg?logo=arxiv height=22px></a>
+<a href=https://arxiv.org/abs/2412.01271 target="_blank"><img src=https://img.shields.io/badge/Report-b5212f.svg?logo=arxiv height=22px></a>
 <a href=http://101.132.98.120:10025/  target="_blank"><img src=https://img.shields.io/badge/%F0%9F%A4%97%20Demo-SD15-276cb4.svg height=22px></a>
 <a href=http://101.132.98.120:10026/  target="_blank"><img src=https://img.shields.io/badge/%F0%9F%A4%97%20Demo-SDXL-276cb4.svg height=22px></a>
 <!-- <a href=# target="_blank"><img src= https://img.shields.io/badge/Colab-8f2628.svg?logo=googlecolab height=22px></a> -->
